@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-app.username = "Chideraa"
+app.username = ""
 
 
 @app.get("/")
@@ -13,9 +13,13 @@ async def home():
 @app.post("/login")
 async def login(username):
     app.username = username
+
+
+@app.get("/login")
+async def login():
     return f"{app.username} is presently logged in."
 
 
 @app.delete("/reset")
-async def reset():
+def reset():
     app.username = ""
