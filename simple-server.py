@@ -10,7 +10,7 @@ async def home():
     return f"Welcome home, {app.username}."
 
 
-@app.get("/login")
+@app.post("/login")
 async def login(username):
     app.username = username
     return f"{app.username} is presently logged in."
